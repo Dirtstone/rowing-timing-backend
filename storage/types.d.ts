@@ -1,5 +1,5 @@
 
-type RegattaData = {
+export type RegattaData = {
     name: string,
     races: {
         number: number,
@@ -17,17 +17,17 @@ type RegattaData = {
     }[]
 }
 
-type RegattaInfo = {
+export type RegattaInfo = {
     startClientId: string,
     finishClientId: string
 }
 
-interface Regatta {
+export interface Regatta {
     info: RegattaInfo,
     data: RegattaData
 }
 
-interface DatabaseReturn<Return>{
+export interface DatabaseReturn<Return>{
     data: Return | undefined;
     success: boolean,
     errors: string;

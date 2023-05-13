@@ -4,7 +4,14 @@ import {db} from "../index"
 export const clientRouter = Router();
 
 clientRouter.get('/start/:id', async function (req, res, next) {
-  const dbResult = db.createRegattaStart(req.params.id, req.body.clientId, false);
+  console.log(req.params)
+
+  if (typeof req.query.clientId != "string" || req.query.clientId == ""){
+    res.status(500);
+    res.end("The client Id must be a not empty string");
+    return;
+  }
+  const dbResult = db.createRegattaStart(req.params.id, req.query.clientId, false);
   res.end(JSON.stringify(dbResult));
 });
 

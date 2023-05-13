@@ -1,3 +1,5 @@
+import {RegattaData} from "./types";
+
 export const testRegatta: RegattaData = {
   name: "Test Regatta Landesentscheid",
   races: [

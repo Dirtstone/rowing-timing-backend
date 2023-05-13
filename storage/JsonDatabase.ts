@@ -1,6 +1,8 @@
 import JSONdb = require("simple-json-db");
 import {v4 as uuidv4} from 'uuid';
 
+import {DatabaseReturn, Regatta, RegattaData, RegattaInfo} from './types'
+
 export class JsonDatabase {
   database: any;
 
