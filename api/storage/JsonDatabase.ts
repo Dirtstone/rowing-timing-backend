@@ -33,13 +33,20 @@ export class JsonDatabase {
       }
     }
     return {
-      errors: "", success: true,
+      errors: "",
+      success: true,
       data: this.database.get(id)
     };
   }
 
-  getRegattas(): DatabaseReturn<Array<string>> {
-    return this.database.get("regattas");
+  getRegattas(): DatabaseReturn<Array<{uuid: string, name: string}>> {
+    let data: {uuid: string, name: string}[] = [];
+    let regattas = this.database.get("regattas");
+    for (let regatta of regattas){
+      data.push({uuid: regatta, name: this.database.get(regatta).data.name})
+    }
+
+    return {success: true, errors: "", data: data};
   }
 
   updateRegatta(regattaData: RegattaData, id: string): DatabaseReturn<RegattaData> {
@@ -83,7 +90,7 @@ export class JsonDatabase {
     }
 
     this.database.set(regattaId, regatta);
-    return {data: regatta.data, errors: "", success: false}
+    return {data: regatta.data, errors: "", success: true}
   }
 
   updateRegattaStart(id: string, clientId: string, data: RegattaData): DatabaseReturn<RegattaData> {
@@ -105,7 +112,20 @@ export class JsonDatabase {
       }
     }
 
-    //ToDo Update StartTimes, DNS and DNS Reason. AND not to forget division changes
+    for (let i = 0; i < data.races.length; i++){
+      for (let j = 0; j< data.races[i].boats.length; j++){
+        //@ts-ignore
+        regatta.data.races[i].boats[j].startTime = data.races[i].boats[j].startTime;
+        regatta.data.races[i].boats[j].didNotAttend = data.races[i].boats[j].didNotAttend;
+        if (regatta.data.races[i].boats[j].didNotAttend){
+          regatta.data.races[i].boats[j].reason = data.races[i].boats[j].reason
+        }
+
+        if (regatta.data.races[i].boats[j].division != data.races[i].boats[j].division){
+          regatta.data.races[i].boats[j].division = data.races[i].boats[j].division;
+        }
+      }
+    }
 
     this.database.set(id, regatta);
     return {
@@ -133,7 +153,7 @@ export class JsonDatabase {
     return {
       data: undefined,
       errors: "",
-      success: false
+      success: true
     }
   }
 
@@ -158,7 +178,7 @@ export class JsonDatabase {
     }
 
     this.database.set(regattaId, regatta);
-    return {data: regatta.data, errors: "", success: false}
+    return {data: regatta.data, errors: "", success: true}
   }
 
 
@@ -181,7 +201,15 @@ export class JsonDatabase {
       }
     }
 
-    //ToDo Update FinishTimes, DNF and DNF Reason
+    for (let i = 0; i < data.races.length; i++){
+      for (let j = 0; j< data.races[i].boats.length; j++){
+        regatta.data.races[i].boats[j].endTime = data.races[i].boats[j].endTime;
+        regatta.data.races[i].boats[j].didNotFinish = data.races[i].boats[j].didNotFinish;
+        if (!regatta.data.races[i].boats[j].didNotAttend && regatta.data.races[i].boats[j].didNotFinish){
+          regatta.data.races[i].boats[j].reason = data.races[i].boats[j].reason
+        }
+      }
+    }
 
     this.database.set(id, regatta);
     return {
@@ -209,7 +237,7 @@ export class JsonDatabase {
     return {
       data: undefined,
       errors: "",
-      success: false
+      success: true
     }
   }
 

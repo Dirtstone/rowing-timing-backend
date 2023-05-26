@@ -19,6 +19,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         },
@@ -34,6 +35,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         },
@@ -49,6 +51,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         },
@@ -64,6 +67,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         },
@@ -79,6 +83,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         },
@@ -95,6 +100,7 @@ export const testRegatta: RegattaData = {
           endTime: undefined,
           didNotAttend: false,
           reason: "",
+          didNotFinish: false,
           division: 1
         },
         {
@@ -109,6 +115,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 2
         },
@@ -124,6 +131,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 2
         },
@@ -139,6 +147,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 2
         },
@@ -154,6 +163,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 2
         },
@@ -169,6 +179,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 2
         },
@@ -184,6 +195,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 2
         }
@@ -200,6 +212,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         },
@@ -210,6 +223,7 @@ export const testRegatta: RegattaData = {
           startTime: undefined,
           endTime: undefined,
           didNotAttend: false,
+          didNotFinish: false,
           reason: "",
           division: 1
         }

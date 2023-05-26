@@ -1,0 +1,217 @@
+{
+    "regattas": [
+        "4c4b79ce-f2bf-4a9e-8486-fbdeff9215a6"
+    ],
+    "4c4b79ce-f2bf-4a9e-8486-fbdeff9215a6": {
+        "info": {
+            "finishClientId": "",
+            "startClientId": ""
+        },
+        "data": {
+            "name": "Test Regatta Landesentscheid",
+            "races": [
+                {
+                    "number": 1,
+                    "name": "Jungen 4+ 14 Jahre",
+                    "boats": [
+                        {
+                            "number": 1,
+                            "name": "Ruderklub Normannia Braunschweig",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1
+                        },
+                        {
+                            "number": 2,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1
+                        },
+                        {
+                            "number": 3,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1
+                        },
+                        {
+                            "number": 4,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1
+                        },
+                        {
+                            "number": 5,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1
+                        },
+                        {
+                            "number": 6,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "reason": "",
+                            "didNotFinish": false,
+                            "division": 1
+                        },
+                        {
+                            "number": 7,
+                            "name": "Ruderklub Normannia Braunschweig",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 2,
+                            "startTime": "2023-05-24T22:30:48.102Z"
+                        },
+                        {
+                            "number": 8,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 2
+                        },
+                        {
+                            "number": 9,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 2
+                        },
+                        {
+                            "number": 10,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 2
+                        },
+                        {
+                            "number": 11,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 2
+                        },
+                        {
+                            "number": 12,
+                            "name": "Ruderklub Otterndorf",
+                            "athletes": [
+                                "Malte Meiners",
+                                "Felix Vollbrecht",
+                                "Jan-Hinnerk Blanke",
+                                "Ole Blanke"
+                            ],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "Mädchen 4+ 14 Jahre",
+                    "number": 2,
+                    "boats": [
+                        {
+                            "number": 1,
+                            "name": "asv",
+                            "athletes": [],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1,
+                            "startTime": "2023-05-25T20:34:32.291Z"
+                        },
+                        {
+                            "number": 2,
+                            "name": "asv",
+                            "athletes": [],
+                            "didNotAttend": false,
+                            "didNotFinish": false,
+                            "reason": "",
+                            "division": 1,
+                            "startTime": "2023-05-25T20:05:25.000Z"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

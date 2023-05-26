@@ -4,7 +4,7 @@ import * as http from 'http'
 import cookieParser = require('cookie-parser');
 import bodyParser = require('body-parser');
 import {JsonDatabase} from "./storage/JsonDatabase";
-
+import {testRegatta} from "./storage/test"
 
 const app = Express();
 const server = new http.Server(app);
@@ -12,12 +12,13 @@ const server = new http.Server(app);
 // @ts-ignore
 let allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 };
 
 export const db = new JsonDatabase("./data/data.json");
+//db.createRegatta(testRegatta)
 
 app.use(allowCrossDomain);
 app.use(logger('dev'));

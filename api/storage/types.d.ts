@@ -8,9 +8,10 @@ export type RegattaData = {
             number: number,
             name: string,
             athletes: string[],
-            startTime: Date | undefined,
-            endTime: Date | undefined,
+            startTime: string,
+            endTime: string,
             didNotAttend: boolean,
+            didNotFinish: boolean,
             reason: string,
             division: number,
         }[]
