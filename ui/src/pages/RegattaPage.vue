@@ -60,7 +60,7 @@
                                             format24h
                                           >
                                             <div class="row items-center justify-end">
-                                              <q-btn v-close-popup label="Close" color="primary" flat />
+                                              <q-btn v-close-popup label="Close" color="primary" flat/>
                                             </div>
                                           </q-time>
                                         </q-popup-proxy>
@@ -78,7 +78,7 @@
                                             format24h
                                           >
                                             <div class="row items-center justify-end">
-                                              <q-btn v-close-popup label="Close" color="primary" flat />
+                                              <q-btn v-close-popup label="Close" color="primary" flat/>
                                             </div>
                                           </q-time>
                                         </q-popup-proxy>
@@ -89,7 +89,8 @@
                                 <div class="row">
                                   <q-toggle v-model="boat.didNotAttend" disabled label="DNS"/>
                                   <q-toggle v-model="boat.didNotFinish" disabled label="DNF"/>
-                                  <q-input type="text" v-if="boat.didNotAttend || boat.didNotFinish" v-model="boat.reason"
+                                  <q-input type="text" v-if="boat.didNotAttend || boat.didNotFinish"
+                                           v-model="boat.reason"
                                            label="Grund für nicht Erscheinen"/>
                                 </div>
                               </q-card-actions>
@@ -111,71 +112,120 @@
 
 <script setup lang="ts">
 import {useRoute} from "vue-router";
-import {computed, onMounted, Ref, ref, watch, WritableComputedRef} from "vue";
+import {computed, ComputedRef, onMounted, Ref, ref, WritableComputedRef} from "vue";
 import {Regatta} from "components/Interface";
 import {api} from "boot/axios";
+import {hasError, hasWarning} from "components/TimingErrors";
 
 // Init empty value
-const regatta: Ref<Regatta | undefined>  = ref(undefined);
+const regatta: Ref<Regatta | undefined> = ref(undefined);
 const route = useRoute();
 
-const boatTimes: Ref<Array<Array<{startTime: WritableComputedRef<String>, endTime: WritableComputedRef<String>}>>> = ref([]);
+const boatTimes: Ref<Array<Array<{
+  startTime: WritableComputedRef<String>,
+  endTime: WritableComputedRef<String>
+}>>> = ref([]);
+const regattaErrors: ComputedRef<{
+  error: boolean,
+  warning: boolean,
+  raceErrors: { error: boolean, warning: boolean, boatErrors: { errors: string[], warnings: string[] }[] }[]
+}> = computed(() => {
+  if (!("data" in regatta.value)) {
+    return {error: false, warning: false, raceErrors: []};
+  }
+  let raceErrors: Array<{
+    error: boolean,
+    warning: boolean,
+    boatErrors: Array<{ error: boolean, errors: string[], warning: boolean, warnings: string[] }>
+  }> = []
+  for (const race of regatta.value.data.races) {
+    let boatErrors: Array<{ error: boolean, errors: string[], warning: boolean, warnings: string[] }> = [];
+    for (const boat of race.boats) {
+      const foundErrors = hasError(boat);
+      const foundWarnings = hasWarning(boat)
+      boatErrors.push({
+        error: foundErrors.length > 0,
+        errors: foundErrors,
+        warning: foundWarnings.length > 0,
+        warnings: foundWarnings
+      });
+    }
+    raceErrors.push({
+      error: boatErrors.some((el) => el.error),
+      warning: boatErrors.some((el) => el.warning),
+      boatErrors: boatErrors
+    })
+  }
+  return {error: raceErrors.some((el)=> el.error), warning: raceErrors.some((el)=> el.warning), raceErrors: raceErrors};
+});
 
-onMounted(async ()=>{
+onMounted(async () => {
   console.log("AP")
   const response = await api.get(`/regatta/${route.params.id}`);
   console.log(response)
-  if (response.status == 200 && response.data.success){
+  if (response.status == 200 && response.data.success) {
     regatta.value = response.data.data;
 
-    if (!("data" in regatta.value)){
+    if (!("data" in regatta.value)) {
       return
     }
 
-    for (let race of regatta.value.data.races){
-      let raceTimes: Array<{startTime: WritableComputedRef<String>, endTime: WritableComputedRef<String>}> = []
-      for (let boat of race.boats){
-        raceTimes.push({startTime: computed({
-            get(): string{
-              return boat.startTime ? new Date(boat.startTime).toLocaleTimeString('de-DE', {hour: '2-digit', minute: '2-digit', second: '2-digit', fractionalSecondDigits: '2'}): "";
+    for (let race of regatta.value.data.races) {
+      let raceTimes: Array<{ startTime: WritableComputedRef<String>, endTime: WritableComputedRef<String> }> = []
+      for (let boat of race.boats) {
+        raceTimes.push({
+          startTime: computed({
+            get(): string {
+              return boat.startTime ? new Date(boat.startTime).toLocaleTimeString('de-DE', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                fractionalSecondDigits: '2'
+              }) : "";
             },
-            set(newValue: string):void{
-              if (newValue == ""){
+            set(newValue: string): void {
+              if (newValue == "") {
                 boat.startTime = ""
-              }else{
+              } else {
                 const newDateNumber = Date.parse(((new Date().toISOString().split("T")[0]) + "T" + newValue).replace(",", "."))
-                if (!isNaN(newDateNumber)){
+                if (!isNaN(newDateNumber)) {
                   const newDate = new Date(newDateNumber);
                   boat.startTime = newDate.toISOString();
-                }else{
+                } else {
                   //ToDo Show error message
                   //  Actually maybe not. Could work without
                 }
               }
             }
           }), endTime: computed({
-            get(): string{
-              return boat.endTime ? new Date(boat.endTime).toLocaleTimeString('de-DE', {hour: '2-digit', minute: '2-digit', second: '2-digit', fractionalSecondDigits: '2'}) : "";
+            get(): string {
+              return boat.endTime ? new Date(boat.endTime).toLocaleTimeString('de-DE', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                fractionalSecondDigits: '2'
+              }) : "";
             },
-            set(newValue: string):void{
-              if (newValue == ""){
+            set(newValue: string): void {
+              if (newValue == "") {
                 boat.endTime = ""
-              }else{
+              } else {
                 const newDateNumber = Date.parse(((new Date().toISOString().split("T")[0]) + "T" + newValue).replace(",", "."))
-                if (!isNaN(newDateNumber)){
+                if (!isNaN(newDateNumber)) {
                   const newDate = new Date(newDateNumber);
                   boat.endTime = newDate.toISOString();
-                }else{
+                } else {
                   //ToDo Show error message
                   //  Actually maybe not. Could work without
                 }
               }
             }
-          })});
+          })
+        });
       }
-      boatTimes.value.push(raceTimes)
+      boatTimes.value.push(raceTimes);
     }
-  }else {
+  } else {
     console.log("Error happened")
     //ToDo Handle Error
   }
@@ -184,8 +234,8 @@ onMounted(async ()=>{
 function getNumberOfDivisions(raceIndex: number): number {
   let maxDivisions = 1;
 
-  if (!("data" in regatta.value)){
-    return 0
+  if (!("data" in regatta.value)) {
+    return 0;
   }
 
   for (const boat of regatta.value.data.races[raceIndex].boats) {

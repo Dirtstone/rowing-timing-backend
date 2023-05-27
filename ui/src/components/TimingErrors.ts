@@ -9,37 +9,50 @@ interface Boat {
   reason: string,
   division: number,
 }
-export function hasError(boat: Boat): string{
+export function hasError(boat: Boat): string[]{
+  let result : string[] = []
+
   if (!boat.startTime && !boat.didNotAttend){
-    return "No start time given and DNS not set"
+    result.push("No start time given and DNS not set")
   }
   if (boat.startTime && boat.didNotAttend){
-    return "Start time given and DNS set"
+    result.push("Start time given and DNS set")
   }
   if (!boat.endTime && !boat.didNotFinish){
-    return "No end time given and DNF not set"
+    result.push("No end time given and DNF not set")
   }
   if (boat.endTime && boat.didNotFinish){
-    return "End time given and DNF set"
+    result.push("End time given and DNF set")
   }
   if (boat.endTime && !boat.startTime){
-    return "End time given but no start time"
+    result.push("End time given but no start time")
   }
   if (new Date(boat.startTime) > new Date(boat.endTime)){
-    return "Start time greater than end time"
+    result.push("Start time greater than end time")
   }
   if (boat.didNotAttend && boat.didNotFinish){
-    return "DNS and DNF is set"
+    result.push("DNS and DNF is set")
   }
-  return "";
+  return result
 }
 
-export function hasWarning(boat: Boat): string{
-  if (boat.startTime && !boat.endTime){
-    return "Start time given but no end time"
+export function hasWarning(boat: Boat): string[]{
+  let result : string[] = []
+
+  if (boat.startTime && !boat.endTime && !boat.didNotFinish){
+    result.push("Start time given but no end time")
   }
   if ((boat.didNotFinish || boat.didNotAttend) && !boat.reason){
-    return "DNS or DNF set but no reason given"
+    result.push("DNS or DNF set but no reason given")
   }
-  return "";
+
+  const duration = new Date(boat.endTime).getTime() - new Date(boat.startTime).getTime();
+  if (duration < 120000){
+    result.push("Duration is smaller than 2 minutes")
+  }
+  if (duration > 30 * 60000){
+    result.push("Duration is greater than 30 minutes")
+  }
+
+  return result;
 }

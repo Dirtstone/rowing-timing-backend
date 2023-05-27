@@ -36,7 +36,10 @@ import {resultRouter} from "./routes/result";
 app.use('/result', resultRouter);
 
 import {clientRouter} from "./routes/client";
+import * as path from "path";
 app.use('/client', clientRouter)
+
+app.use('/', Express.static(path.join(__dirname, '../ui/dist/spa/')))
 
 server.listen(3000, function () {
     console.log('Listening on port 3000!');
