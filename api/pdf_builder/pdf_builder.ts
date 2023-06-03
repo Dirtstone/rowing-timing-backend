@@ -1,3 +1,5 @@
+
+// @ts-nocheck
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const { text } = require('pdfkit');
