@@ -8,4 +8,4 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: docker build -t localhost:5000/rowing-timing-backend:latest .
-      - run: docker push rowing-timing-backend:latest
+      - run: docker push localhost:5000/rowing-timing-backend:latest
