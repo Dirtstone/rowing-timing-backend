@@ -7,5 +7,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: docker build -t 127.0.0.1:5000/rowing-timing-backend:latest .
-      - run: docker push 127.0.0.1:5000/rowing-timing-backend:latest
+      -
+        name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: localhost:5000/rowing-timing-backend:latest
