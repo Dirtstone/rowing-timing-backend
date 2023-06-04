@@ -3,7 +3,6 @@
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const { text } = require('pdfkit');
-import { read } from 'fs';
 import {RegattaData}from '../storage/types'
 
 
@@ -484,16 +483,13 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
       name: race.name,
       divisions: []
     };
-
-    let divisions: { number: number, boats: { number: number, name: string, time: string, athletes: string[], timeMilli: number, }[] }[] = [];   //Zu regattaPdf passendes Array erstellen
-
     for (const boat of race.boats) {          //Alle Bote von regattaData durchlaufen und Daten umspeichern
       
 
       const divisionIndex = racePdf.divisions.findIndex((divisionObj) => divisionObj.number === boat.division);  //Wenn Division vorhanden, dann Rückgabe des Indexes der Division im divisions Array, wenn nich dann Rückgabe = -1
 
       if (divisionIndex !== -1) {
-        let division = divisions[divisionIndex]; 
+        let division = racePdf.divisions[divisionIndex];
         if (division) {
           division.boats.push({
             number: boat.number,
@@ -514,12 +510,11 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
               timeMilli: 0,
             }]
         };
-        divisions.push(division);
+        racePdf.divisions.push(division);
       }
 
     }
 
-    racePdf.divisions = divisions
     regattaPdf.races.push(racePdf);           //Rennen wird in Array geschoben
   }
 
@@ -561,7 +556,7 @@ function sortDivisionsByTime(regatta: RegattaPdf): RegattaPdf {
             return aSeconds - bSeconds;
           }
         } else {
-          return -1;
+          return 0;
         }
       });
 
