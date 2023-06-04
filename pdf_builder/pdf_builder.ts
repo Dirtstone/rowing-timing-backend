@@ -22,7 +22,7 @@ const regatta: RegattaData = {
             "Ole Blanke"
           ],
           startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:33:13.375Z"),
+          endTime: new Date("2023-04-14T16:34:23.375Z"),
           didNotAttend: false,
           reason: "",
           division: 1
@@ -67,7 +67,7 @@ const regatta: RegattaData = {
             "Ole Blanke"
           ],
           startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:36:13.375Z"),
+          endTime: new Date("2023-04-14T16:34:23.375Z"),
           didNotAttend: false,
           reason: "",
           division: 1
@@ -235,17 +235,16 @@ type RegattaPdf = {
       boats: {
         number: number,
         name: string,
-        time: number,
-        rank: number,
+        time: string,
         athletes: string[],
-        reason: string,
+        timeMilli: number,
       }[]
     }[]
   }[]
 }
 
 
-
+/*
 function convertRegattaDataToRegattaPdf(pRegatta: RegattaData) {                                      //Convert RegattaData type to RegattaPdf type
 
   let regattaRead: RegattaPdf = {
@@ -319,16 +318,41 @@ function convertRegattaDataToRegattaPdf(pRegatta: RegattaData) {                
 
 console.log(convertRegattaDataToRegattaPdf(regatta));
 
+function convertRegattaDataToRegattaPdf(pRegatta: RegattaData) { 
 
-for(let race of regatta.races) {
+  let regattaRead: RegattaPdf = {
+    name: pRegatta.name,                                                                              //Copy Regatta name
+    races: []         
+  }; 
 
-  for(let boat of race.boats) {
+  for(let races of regatta.races) {
 
-    console.log(boat.number);
+    let race = {
+      name: races.name,
+      number: races.number,
+      division: [],
+    };   
+
+    for(let boats of races.boats) {
+
+      let boat = {
+        number: boats.number,
+        name: boats.name,
+        time: ,
+        rank: ,
+        athletes: boats.athletes,
+        reason: boats.reason,
+      };
+
+      race.push()
+
+    }
+
+    regattaRead.races.push(race);
 
   }
-
 }
+
 
 /*
 const doc = new PDFDocument({
@@ -429,4 +453,149 @@ const doc = new PDFDocument({
   }
 
   doc.end();
-  */
+}
+*/
+
+
+function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf {     //RegattaData-Type zum RegattaPdf-Type umwandeln
+  const regattaPdf: RegattaPdf = {
+    name: regattaData.name,
+    races: []
+  };
+
+  for (const race of regattaData.races) {     //Alle Rennen von regattaData durchlaufen und Daten umspeichern
+    let racePdf : {
+      number: number,
+      name: string,
+      divisions: {
+        number: number,
+        boats: {
+          number: number,
+          name: string,
+          time: string,
+          athletes: string[],
+          timeMilli: number,
+        }[]
+      }[]
+    } = {
+      number: race.number,
+      name: race.name,
+      divisions: []
+    };
+
+    let divisions: { number: number, boats: { number: number, name: string, time: string, athletes: string[], timeMilli: number, }[] }[] = [];   //Zu regattaPdf passendes Array erstellen
+
+    for (const boat of race.boats) {          //Alle Bote von regattaData durchlaufen und Daten umspeichern
+      
+
+      const divisionIndex = racePdf.divisions.findIndex((divisionObj) => divisionObj.number === boat.division);  //Wenn Division vorhanden, dann Rückgabe des Indexes der Division im divisions Array, wenn nich dann Rückgabe = -1
+
+      if (divisionIndex !== -1) {
+        let division = divisions[divisionIndex]; 
+        if (division) {
+          division.boats.push({
+            number: boat.number,
+            name: boat.name,
+            time: getBoatTime(boat.startTime, boat.endTime),
+            athletes: boat.athletes,
+            timeMilli: 0,
+          });
+        }
+      } else {
+        let division = { 
+            number: boat.division,
+            boats: [{
+              number: boat.number,
+              name: boat.name,
+              time: getBoatTime(boat.startTime, boat.endTime),
+              athletes: boat.athletes,
+              timeMilli: 0,
+            }]
+        };
+        divisions.push(division);
+      }
+
+    }
+
+    racePdf.divisions = divisions
+    regattaPdf.races.push(racePdf);           //Rennen wird in Array geschoben
+  }
+
+  return regattaPdf;                          //Rückgabe von regattaPdf
+}
+
+function getBoatTime(startTime: Date | undefined, endTime: Date | undefined): string {      //Funktion zum berechen der Zeit
+  if (startTime && endTime) {
+    const milliseconds = endTime.getTime() - startTime.getTime();
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+  
+    const minutesString = String(minutes).padStart(2, '0');
+    const secondsString = String(seconds).padStart(2, '0');
+  
+  return `${minutesString}:${secondsString}`;
+  }
+  if (!startTime) {
+    return "DNS";
+  } else {
+    return "DNF";
+  }       
+}
+
+function sortDivisionsByTime(regatta: RegattaPdf): RegattaPdf {
+  for (const race of regatta.races) {
+    for(const division of race.divisions) {
+      division.boats = division.boats.sort((a, b) => {
+        // Die Zeit-Strings in Minuten und Sekunden aufteilen
+        if (a.time !== "DNS" && a.time !== "DNF" && b.time !== "DNS" && b.time !== "DNF") {
+          let [aMinutes, aSeconds] = a.time.split(":").map(Number);
+          let [bMinutes, bSeconds] = b.time.split(":").map(Number);
+
+          // Vergleich der Zeiten (aufsteigende Reihenfolge)
+          if (aMinutes !== bMinutes) {
+            return aMinutes - bMinutes;
+          } else {
+            return aSeconds - bSeconds;
+          }
+        } else {
+          return -1;
+        }
+      });
+
+    }
+
+  }
+
+
+  /*sortedRegatta.races.forEach((race) => {
+    race.divisions.forEach((division) => {
+      division.boats.sort((a, b) => {
+        // Die Zeit-Strings in Minuten und Sekunden aufteilen
+        if (a.time !== "DNS" && a.time !== "DNF" && b.time !== "DNS" && b.time !== "DNF") {
+          let [aMinutes, aSeconds] = a.time.split(":").map(Number);
+          let [bMinutes, bSeconds] = b.time.split(":").map(Number);
+
+          // Vergleich der Zeiten (aufsteigende Reihenfolge)
+          if (aMinutes !== bMinutes) {
+            return aMinutes - bMinutes;
+          } else {
+            return aSeconds - bSeconds;
+          }
+        } else {
+          return -1;
+        }
+      });
+    });
+  });
+*/
+  return regatta;
+}
+
+
+
+
+
+const regattaPdf = convertRegattaDataToRegattaPdf(regatta);
+const sortedRegatta = sortDivisionsByTime(regattaPdf);
+console.log(JSON.stringify(sortedRegatta, null, 2));
