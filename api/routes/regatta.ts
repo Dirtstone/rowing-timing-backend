@@ -12,13 +12,13 @@ regattaRouter.get('/regattas', async function (req, res, next) {
     const dbResult = db.getRegattas();
     res.end(JSON.stringify(dbResult));
 });
-regattaRouter.post('/regatta/update/:id', async function (req, res, next) {
+regattaRouter.post('/regatta/:id', async function (req, res, next) {
     const dbResult = db.updateRegatta(req.body, req.params.id);
     res.end(JSON.stringify(dbResult));
 });
 
-regattaRouter.post('/regatta/create', async function (req, res, next) {
-    const dbResult = db.createRegatta(req.body);
+regattaRouter.put('/regatta', async function (req, res, next) {
+    const dbResult = db.createRegatta(req.body.regatta);
     res.end(JSON.stringify(dbResult));
 });
 
