@@ -2,3 +2,7 @@ ui/node_modules
 api/node_modules
 
 api/package-lock.json
+
+
+
+redirect_uri=http%3A%2F%2F81.169.156.19%3A80%2Foauth2%2Fcallback
