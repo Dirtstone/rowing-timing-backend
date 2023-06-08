@@ -1,19 +1,22 @@
 <template>
-  <q-page>
+  <q-page style="padding: 10px">
     <div class="row">
-      <q-btn>Download PDF Result</q-btn>
-      <q-btn>Download Certificates</q-btn>
+      <q-btn @click="openPdf">Download PDF Result</q-btn>
+      <q-btn @click="downloadCSV">Download Certificates CSV</q-btn>
+      <q-toggle label="Show errors" v-model="showErrors"/>
     </div>
 
     <div class="q-pa-md q-gutter-sm">
       <div v-if="regatta == undefined">
         <!-- ToDo Loading Screen -->
+        Loading
       </div>
       <q-list v-else bordered class="rounded-borders">
         <q-expansion-item
           v-for="(race, raceIndex) of regatta.data.races"
           v-bind="race.number"
           switch-toggle-side
+          :icon="getIconRace(regattaErrors.raceErrors[raceIndex])"
           expand-separator
           :label="'Rennen: ' + String(race.number) + ' ' + race.name"
         >
@@ -93,7 +96,36 @@
                                            v-model="boat.reason"
                                            label="Grund für nicht Erscheinen"/>
                                 </div>
+                                <q-btn style="margin-left: 10px" @click="startSwitchDivisionDialog(raceIndex, boatIndex)">Switch Division</q-btn>
                               </q-card-actions>
+
+                              <q-card-section v-if="showErrors">
+                                <q-expansion-item
+                                  v-if="regattaErrors.raceErrors[raceIndex].boatErrors[boatIndex].errors.length > 0"
+                                  label="Errors"
+                                  icon="error"
+                                  class="text-red"
+                                >
+                                  <q-list>
+                                    <q-item v-for="error in regattaErrors.raceErrors[raceIndex].boatErrors[boatIndex].errors">
+                                      {{error}}
+                                    </q-item>
+                                  </q-list>
+                                </q-expansion-item>
+                                <q-expansion-item
+                                  v-if="regattaErrors.raceErrors[raceIndex].boatErrors[boatIndex].warnings.length > 0"
+                                  label="Warnings"
+                                  icon="warning"
+                                  class="text-orange"
+                                >
+                                  <q-list>
+                                    <q-item v-for="warning in regattaErrors.raceErrors[raceIndex].boatErrors[boatIndex].warnings">
+                                      {{warning}}
+                                    </q-item>
+                                  </q-list>
+                                </q-expansion-item>
+                              </q-card-section>
+
                             </q-card>
                           </q-item>
                         </span>
@@ -107,6 +139,26 @@
         </q-expansion-item>
       </q-list>
     </div>
+    <q-btn @click="save">Save</q-btn>
+
+
+
+    <q-dialog v-model="switchDivisionDialog" persistent>
+      <q-card style="min-width: 350px">
+        <q-card-section>
+          <div class="text-h6">Your address</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          <q-input dense v-model="newDivisionNumber" type="number" autofocus @keyup.enter="switchDivisionDialog = false; switchDivision()" />
+        </q-card-section>
+
+        <q-card-actions align="right" class="text-primary">
+          <q-btn flat label="Cancel" v-close-popup />
+          <q-btn @click="switchDivision" flat label="Add address" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
@@ -116,15 +168,70 @@ import {computed, ComputedRef, onMounted, Ref, ref, WritableComputedRef} from "v
 import {Regatta} from "components/Interface";
 import {api} from "boot/axios";
 import {hasError, hasWarning} from "components/TimingErrors";
+import {exportFile, openURL, useQuasar} from 'quasar'
+
+const $q = useQuasar()
 
 // Init empty value
 const regatta: Ref<Regatta | undefined> = ref(undefined);
 const route = useRoute();
 
+async function save(){
+  const response = await api.post(`/regatta/${route.params.id}`, {regatta: regatta.value});
+  console.log(response)
+}
+
+const switchDivisionDialog: Ref<boolean> = ref(false);
+const newDivisionNumber: Ref<number> = ref(0);
+const newDivisionBoatIndex: Ref<number> = ref(-1);
+const newDivisionRaceIndex: Ref<number> = ref(-1);
+function startSwitchDivisionDialog(raceIndex: number, boatIndex: number){
+  switchDivisionDialog.value = true;
+  newDivisionRaceIndex.value = raceIndex;
+  newDivisionBoatIndex.value = boatIndex;
+}
+
+function switchDivision(){
+  if (!("data" in regatta.value)) {
+    return;
+  }
+  regatta.value.data.races[newDivisionRaceIndex.value].boats[newDivisionBoatIndex.value].division = Number(newDivisionNumber.value);
+}
+
+function openPdf(){
+  /*if (regattaErrors.value.error){
+    $q.notify({
+      message: 'The Regatta has still some Errors. We cant generate a PDF with errors',
+      caption: 'Error',
+      color: 'red'
+    })
+  }else {*/
+    //@ts-ignore
+    openURL(`${process.env.API}result/list/${route.params.id}`)
+  //}
+}
+
+function downloadCSV(){
+  /*if (regattaErrors.value.error){
+    $q.notify({
+      message: 'The Regatta has still some Errors. We cant generate a CSV with errors',
+      caption: 'Error',
+      color: 'red'
+    })
+  }else {*/
+    //@ts-ignore
+  openURL(`${process.env.API}result/certificates/${route.params.id}`)
+  //}
+}
+
+const showErrors: Ref<boolean> = ref(false)
+
 const boatTimes: Ref<Array<Array<{
   startTime: WritableComputedRef<String>,
   endTime: WritableComputedRef<String>
 }>>> = ref([]);
+
+
 const regattaErrors: ComputedRef<{
   error: boolean,
   warning: boolean,
@@ -156,11 +263,40 @@ const regattaErrors: ComputedRef<{
       boatErrors: boatErrors
     })
   }
-  return {error: raceErrors.some((el)=> el.error), warning: raceErrors.some((el)=> el.warning), raceErrors: raceErrors};
+  return {
+    error: raceErrors.some((el) => el.error),
+    warning: raceErrors.some((el) => el.warning),
+    raceErrors: raceErrors
+  };
 });
 
+function getIconRace(obj: {error: boolean, warning: boolean}): (undefined|string){
+  if (!showErrors.value){
+    return undefined;
+  }
+
+  if (obj.error){
+    return "error"
+  }else if (obj.warning){
+    return "warning"
+  }else{
+    return undefined
+  }
+}
+
+function getIconBoat(obj: {errors: string[], warnings: string[]}): (undefined|string){
+  console.log(obj)
+  if (obj.errors.length > 0){
+    return "error"
+  }else if (obj.warnings.length > 0){
+    return "warning"
+  }else{
+    return undefined
+  }
+}
+
+
 onMounted(async () => {
-  console.log("AP")
   const response = await api.get(`/regatta/${route.params.id}`);
   console.log(response)
   if (response.status == 200 && response.data.success) {

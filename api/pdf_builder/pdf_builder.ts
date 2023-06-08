@@ -1,11 +1,10 @@
+import {RegattaData} from '../storage/types'
 
-// @ts-nocheck
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
-const { text } = require('pdfkit');
-import {RegattaData}from '../storage/types'
+const {text} = require('pdfkit');
 
-
+/*
 const regatta: RegattaData = {
   name: "Test Regatta Landesentscheid",
   races: [
@@ -223,9 +222,7 @@ const regatta: RegattaData = {
     }
   ]
 }
-
-
-
+*/
 type RegattaPdf = {
   name: string,
   races: {
@@ -244,110 +241,6 @@ type RegattaPdf = {
   }[]
 }
 
-
-/*
-const doc = new PDFDocument({
-    bufferPages: true
-  });
-  
-  doc.pipe(fs.createWriteStream('Rennergebnisse.pdf'));
-
-  var number_of_races = pRegatta.races.length;
-  for(let n = 0; n < number_of_races; n++) {
-
-    doc.fontSize(14);
-    doc.text("Rennen: " +pRegatta.races[n].name);
-    doc.fontSize(10);
-
-    var number_of_divisions = Array.realLength= Object.keys(pRegatta.races[n].divisions).filter(function(el){return !(+el % 1) && +el>=0 && +el < Math.pow(2,32) ;}).length
-    for(let k = 0; k < number_of_divisions; k++) {
-
-      doc.text("Abteilung: " + pRegatta.races[n].divisions[k].number, doc.page.margins.left);
-      doc.text("Rang   ", {continued: true});
-      doc.text("StNr   ", {continued: true});
-      doc.text("Boot/Mannschaft", {continued: true});
-      doc.text("Ergebnis", {continued: false, align: 'right'});
-
-      var number_of_boats = pRegatta.races[n].divisions[k].boats.length;
-      for(let b = 0; b < number_of_boats; b++) {
-
-        doc.text(pRegatta.races[n].divisions[k].boats[b].number + "  ", {continued: true});
-        
-        var number_of_athletes = Array.realLength= Object.keys(pRegatta.races[n].divisions[k].boats[b].athletes).filter(function(el){return !(+el % 1) && +el>=0 && +el < Math.pow(2,32) ;}).length
-        for(let m = 0; m < number_of_athletes; m++) {
-          
-          if (m < (number_of_athletes - 1)) {
-            doc.text(pRegatta.races[n].divisions[k].boats[b].athletes[m] + ", ", {continued: true});
-          } else {
-            doc.text(pRegatta.races[n].divisions[k].boats[b].athletes[m], {continued: true});
-          }
-
-        }
-
-        if (pRegatta.races[n].divisions[k].boats[b].startTime == undefined && pRegatta.races[n].divisions[k].boats[b].endTime == undefined) {
-          doc.text
-        }
-
-      }
-
-    }
-
-    doc.addPage();
-  }
-  
-
-
-
-
-
-  //Global Edits to All Pages (Header/Footer, etc)
-  let pages = doc.bufferedPageRange();
-  for (let i = 0; i < pages.count; i++) {
-    doc.switchToPage(i);
-  
-    //Footer: Add page number
-    let oldBottomMargin = doc.page.margins.bottom;
-    doc.page.margins.bottom = 0 //Dumb: Have to remove bottom margin in order to write into it
-    
-    doc.lineCap('butt')
-       .moveTo(doc.page.width - doc.page.margins.right, doc.page.height - (oldBottomMargin / 2))
-       .lineTo(doc.page.margins.left, doc.page.height - (oldBottomMargin / 2))
-       .stroke();
-    
-    doc
-      .text(
-        `Seite: ${i + 1}/${pages.count}`,
-        0,
-        doc.page.height - (oldBottomMargin/2) - 12, 
-        { align: 'right' }
-      );
-
-    doc.text(`Version 1.0`,
-    0,
-    doc.page.height - (oldBottomMargin/2) + 3, 
-    { align: 'right' }
-    );
-
-    doc.text(`Ruderjugend Niedersachsen`,
-    doc.page.margins.left,
-    doc.page.height - (oldBottomMargin/2) - 12, 
-    { align: 'left' }
-    );
-
-    doc.text("Veröffentlicht am 11.06.2023",
-    doc.page.margins.left,
-    doc.page.height - (oldBottomMargin/2) + 3, 
-    { align: 'left' }
-    );
-
-    doc.page.margins.bottom = oldBottomMargin; // ReProtect bottom margin
-  }
-
-  doc.end();
-}
-*/
-
-
 function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf {     //RegattaData-Type zum RegattaPdf-Type umwandeln
   const regattaPdf: RegattaPdf = {
     name: regattaData.name,
@@ -355,7 +248,7 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
   };
 
   for (const race of regattaData.races) {     //Alle Rennen von regattaData durchlaufen und Daten umspeichern
-    let racePdf : {
+    let racePdf: {
       number: number,
       name: string,
       divisions: {
@@ -374,7 +267,7 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
       divisions: []
     };
     for (const boat of race.boats) {          //Alle Bote von regattaData durchlaufen und Daten umspeichern
-      
+
 
       const divisionIndex = racePdf.divisions.findIndex((divisionObj) => divisionObj.number === boat.division);  //Wenn Division vorhanden, dann Rückgabe des Indexes der Division im divisions Array, wenn nich dann Rückgabe = -1
 
@@ -386,19 +279,19 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
             name: boat.name,
             time: getBoatTime(boat.startTime, boat.endTime),
             athletes: boat.athletes,
-            timeMilli: getBoatTimeMilli(boat.startTime, boat.endTime),
+            timeMilli: getBoatTimeMilli(new Date(boat.startTime), new Date(boat.endTime)),
           });
         }
       } else {
-        let division = { 
-            number: boat.division,
-            boats: [{
-              number: boat.number,
-              name: boat.name,
-              time: getBoatTime(boat.startTime, boat.endTime),
-              athletes: boat.athletes,
-              timeMilli: getBoatTimeMilli(boat.startTime, boat.endTime),
-            }]
+        let division = {
+          number: boat.division,
+          boats: [{
+            number: boat.number,
+            name: boat.name,
+            time: getBoatTime(boat.startTime, boat.endTime),
+            athletes: boat.athletes,
+            timeMilli: getBoatTimeMilli(new Date(boat.startTime), new Date(boat.endTime)),
+          }]
         };
         racePdf.divisions.push(division);
       }
@@ -411,36 +304,36 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
   return regattaPdf;                          //Rückgabe von regattaPdf
 }
 
-function getBoatTime(startTime: Date | undefined, endTime: Date | undefined): string {      //Funktion zum berechen der Zeit
-  if (startTime && endTime) {
-    const milliseconds = endTime.getTime() - startTime.getTime();
+export function getBoatTime(startTime: string, endTime: string): string {      //Funktion zum berechen der Zeit
+  if (startTime != "" && endTime != "") {
+    const milliseconds = new Date(endTime).getTime() - new Date(startTime).getTime();
     const totalSeconds = Math.floor(milliseconds / 1000);
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
-  
+
     const minutesString = String(minutes).padStart(2, '0');
     const secondsString = String(seconds).padStart(2, '0');
-  
-  return `${minutesString}:${secondsString}`;
+
+    return `${minutesString}:${secondsString}`;
   }
   if (!startTime) {
     return "DNS";
   } else {
     return "DNF";
-  }       
+  }
 }
 
 function getBoatTimeMilli(startTime: Date | undefined, endTime: Date | undefined): number {      //Funktion zum berechen der Zeit
   if (startTime && endTime) {
     const milliseconds = endTime.getTime() - startTime.getTime();
     return milliseconds;
-  }    
-  return 0; 
+  }
+  return 0;
 }
 
 function sortDivisionsByTime(regatta: RegattaPdf): RegattaPdf {
   for (const race of regatta.races) {
-    for(const division of race.divisions) {
+    for (const division of race.divisions) {
       division.boats = division.boats.sort((a, b) => {
         // Die Zeit-Strings in Minuten und Sekunden aufteilen
         if (a.time !== "DNS" && a.time !== "DNF" && b.time !== "DNS" && b.time !== "DNF") {
@@ -454,7 +347,7 @@ function sortDivisionsByTime(regatta: RegattaPdf): RegattaPdf {
             if (aSeconds !== bSeconds) {
               return aSeconds - bSeconds;
             } else {
-               return a.timeMilli - b.timeMilli;
+              return a.timeMilli - b.timeMilli;
             }
           }
         } else {
@@ -468,14 +361,21 @@ function sortDivisionsByTime(regatta: RegattaPdf): RegattaPdf {
   return regatta;
 }
 
-function printRegattaergebnisse(regattaPrint: RegattaPdf, savePaper: boolean): void {
+function printRegattaErgebnisse(regattaPrint: RegattaPdf, savePaper: boolean, res: any): void {
   const doc = new PDFDocument({
     bufferPages: true,
     layout: 'landscape',
     size: 'A4',
   });
-  
-  doc.pipe(fs.createWriteStream('Rennergebnisse.pdf'));
+
+
+  let buffers: Buffer[] = [];
+  doc.on('data', buffers.push.bind(buffers));
+  doc.on('end', () => {
+    return Buffer.concat(buffers)
+  });
+
+  doc.pipe(res);
 
   doc.fontSize(90);
   doc.text("Landesentscheid Niedersachsen", {align: 'center'});
@@ -488,9 +388,9 @@ function printRegattaergebnisse(regattaPrint: RegattaPdf, savePaper: boolean): v
 
 
   doc.fontSize(20);
-  
+
   for (const race of regattaPrint.races) {
-   
+
 
     for (const division of race.divisions) {
       doc.text(race.name, {continued: true, align: 'left'})
@@ -512,67 +412,63 @@ function printRegattaergebnisse(regattaPrint: RegattaPdf, savePaper: boolean): v
 
       if (!savePaper) {
         doc.addPage();
-      } 
+      }
     }
   }
-  
-  
+
+
   //Global Edits to All Pages (Header/Footer, etc)
   let pages = doc.bufferedPageRange();
   doc.fontSize(14);
   for (let i = 0; i < pages.count; i++) {
     doc.switchToPage(i);
-    
+
     //Footer: Add page number
     let oldBottomMargin = doc.page.margins.bottom;
     doc.page.margins.bottom = 0 //Dumb: Have to remove bottom margin in order to write into it
-      
+
     doc.lineCap('butt')
-       .moveTo(doc.page.width - doc.page.margins.right, doc.page.height - (oldBottomMargin / 2))
-       .lineTo(doc.page.margins.left, doc.page.height - (oldBottomMargin / 2))
-       .stroke();
-      
+      .moveTo(doc.page.width - doc.page.margins.right, doc.page.height - (oldBottomMargin / 2))
+      .lineTo(doc.page.margins.left, doc.page.height - (oldBottomMargin / 2))
+      .stroke();
+
     doc
       .text(
         `Seite: ${i + 1}/${pages.count}`,
         0,
-        doc.page.height - (oldBottomMargin/2) - 12, 
-        { align: 'right' }
+        doc.page.height - (oldBottomMargin / 2) - 12,
+        {align: 'right'}
       );
-  
+
     doc.text(`Version 1.0`,
-    0,
-    doc.page.height - (oldBottomMargin/2) + 3, 
-    { align: 'right' }
+      0,
+      doc.page.height - (oldBottomMargin / 2) + 3,
+      {align: 'right'}
     );
-  
+
     doc.text(`Ruderjugend Niedersachsen`,
-    doc.page.margins.left,
-    doc.page.height - (oldBottomMargin/2) - 12, 
-    { align: 'left' }
+      doc.page.margins.left,
+      doc.page.height - (oldBottomMargin / 2) - 12,
+      {align: 'left'}
     );
-  
+
     doc.text("Veröffentlicht am " + (new Date()).toLocaleDateString(),
-    doc.page.margins.left,
-    doc.page.height - (oldBottomMargin/2) + 3, 
-    { align: 'left' }
+      doc.page.margins.left,
+      doc.page.height - (oldBottomMargin / 2) + 3,
+      {align: 'left'}
     );
-  
+
     doc.page.margins.bottom = oldBottomMargin; // ReProtect bottom margin
   }
-  
+
   doc.end();
 
 }
 
+export function getRegattaResult(res: any, regatta: RegattaData) {
+  const regattaPdf = convertRegattaDataToRegattaPdf(regatta);
+  const sortedRegatta = sortDivisionsByTime(regattaPdf);
+  printRegattaErgebnisse(sortedRegatta, false, res);
+}
 
 
-
-
-
-
-
-const regattaPdf = convertRegattaDataToRegattaPdf(regatta);
-const sortedRegatta = sortDivisionsByTime(regattaPdf);
-//console.log(JSON.stringify(sortedRegatta, null, 2));
-printRegattaergebnisse(sortedRegatta, false);

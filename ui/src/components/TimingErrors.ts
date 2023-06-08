@@ -46,12 +46,21 @@ export function hasWarning(boat: Boat): string[]{
     result.push("DNS or DNF set but no reason given")
   }
 
-  const duration = new Date(boat.endTime).getTime() - new Date(boat.startTime).getTime();
-  if (duration < 120000){
-    result.push("Duration is smaller than 2 minutes")
-  }
-  if (duration > 30 * 60000){
-    result.push("Duration is greater than 30 minutes")
+  const start = new Date(boat.startTime)
+  const end = new Date(boat.endTime)
+
+  const duration = end.getTime() - start.getTime();
+  if (!isNaN(duration)){
+    console.log(start)
+    console.log(end)
+    console.log(duration)
+
+    if (duration < 120000){
+      result.push("Duration is smaller than 2 minutes")
+    }
+    if (duration > 30 * 60000){
+      result.push("Duration is greater than 30 minutes")
+    }
   }
 
   return result;

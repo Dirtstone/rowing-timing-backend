@@ -49,7 +49,7 @@ export class JsonDatabase {
     return {success: true, errors: "", data: data};
   }
 
-  updateRegatta(regattaData: RegattaData, id: string): DatabaseReturn<RegattaData> {
+  updateRegatta(regattaData: Regatta, id: string): DatabaseReturn<RegattaData> {
     if (!this.database.has(id)) {
       return {
         data: undefined,
@@ -59,7 +59,7 @@ export class JsonDatabase {
     }
     //ToDo Validation??
     let regatta: Regatta = this.database.get(id);
-    regatta.data = regattaData;
+    regatta.data = regattaData.data;
     this.database.set(id, regatta)
 
     return {

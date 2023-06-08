@@ -13,7 +13,8 @@ regattaRouter.get('/regattas', async function (req, res, next) {
     res.end(JSON.stringify(dbResult));
 });
 regattaRouter.post('/regatta/:id', async function (req, res, next) {
-    const dbResult = db.updateRegatta(req.body, req.params.id);
+    console.log(req.body)
+    const dbResult = db.updateRegatta(req.body.regatta, req.params.id);
     res.end(JSON.stringify(dbResult));
 });
 
