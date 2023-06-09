@@ -1,1 +1,1033 @@
-{"name":"Meldeergebnis Landesentscheid Scharnebeck 10./11.06.2023 Tag2","races":[{"number":7,"name":"JM 1x B 1000m","boats":[{"number":65,"division":1,"name":"RV Schillerschule","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Alexandru Ogrezeanu-Ghica(2008)"]},{"number":66,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Enjo Rehberg(2008)"]}]},{"number":201,"name":"Jung/Mäd 4x+ 13 u. 14 Jahre 1000m","boats":[{"number":1,"division":1,"name":"Oldenburger RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Felix Spingat(2009)","Katharina Viviana Güldenpfennig(2009)","Felix Bareins(2009)","Philine Schäfer(2009)","Stm/f Martha Mehls(2009)"]},{"number":2,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Moritz Brich(2009)","Hanno Hoffmann(2010)","Isabel Sophie Kreibohm(2010)","Beke Diederichs(2010)","Stm/f Janne Hoffmann(2009)"]},{"number":3,"division":1,"name":"DRC Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Thees Jakob Scheffermann(2010)","Janus Lippke(2009)","Rabiya Hohensee(2009)","Karla Starke(2010)","Stm/f Dorian Kayser(2009)"]}]},{"number":202,"name":"Jung 4x+ 13 u. 14 Jahre 1000m","boats":[{"number":4,"division":1,"name":"RV Bismarckschule Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Lovis Grotelüschen(2009)","Lennart Derenthal(2009)","Clemens Denger(2009)","Julius Müller-Seils(2009)","Julius Hennig(2009)"]}]},{"number":203,"name":"Mäd 4x 13 u. 14 Jahre 1000m","boats":[{"number":5,"division":1,"name":"Hannoverscher RC","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Langfehrmann, Clara(2009)","Giesemann, Svea(2009)","Stendel, Sophia(2009)","Beckmann, Carolin(2009)","Bechstein, Mia(2011)"]}]},{"number":204,"name":"Jung 2x 13/14 Jahre 1000m","boats":[{"number":6,"division":1,"name":"RGF Lehrte/Sehnde","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Lennart Spiegel(2009)","Jack Moritz(2009)"]},{"number":7,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Thore Eibich(2009)","Christopher tom Wörden(2009)"]},{"number":8,"division":1,"name":"Bremerh. RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Tim Tiborski(2009)","Sönke Waltner(2009)"]},{"number":9,"division":1,"name":"WSV Altwarmbüchen e.V.","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Tristan Kohn(2009)","Jakob Süßmuth(2009)"]},{"number":10,"division":1,"name":"RV Uelzen","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Lasse Hennings(2009)","Jan Rümcker(2009)"]},{"number":11,"division":1,"name":"DRC Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Malte Brackhahn(2009)","Richard Janz (2009)"]}]},{"number":205,"name":"Jung 2x 13/14 Jahre LG 1000m","boats":[{"number":12,"division":1,"name":"RV Bismarckschule Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Henrik Großkopf(2009)","Antonio Ureta(2009)"]},{"number":13,"division":1,"name":"Hermann Billung Celle","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Colin Scott(2010)","Kurt Breuer(2009)"]},{"number":14,"division":1,"name":"DRC Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Janik Matthaei(2010)","Clemens Raschke(2009)"]}]},{"number":206,"name":"Mäd 2x 13 u. 14 Jahre 1000m","boats":[{"number":15,"division":1,"name":"Oldenburger RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Maja Fricke(2009)","Lilian Pabst(2009)"]},{"number":16,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Zoe Voigt(2009)","Lina Voigt(2009)"]}]},{"number":207,"name":"Mäd 2x 13/14  Jahre LG 1000m","boats":[{"number":17,"division":1,"name":"RV Bismarckschule Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Hailee-Mae Hallwas(2009)","Sina Kluwe(2009)"]}]},{"number":208,"name":"Jung 1x 14 Jahre 1000m","boats":[{"number":18,"division":1,"name":"RK Normannia Braunschweig","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Silas Schelling(2009)"]},{"number":19,"division":1,"name":"Mündener RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Jonas Risse(2009)"]},{"number":20,"division":1,"name":"BSC Bremen","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Liam Steinke(2009)"]},{"number":21,"division":1,"name":"SV Scharnebeck","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Jasper Irmann(2009)"]},{"number":22,"division":1,"name":"RGF Lehrte/Sehnde","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Malte Kotter(2009)"]},{"number":23,"division":1,"name":"Oldenburger RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Bela Rücker(2009)"]}]},{"number":209,"name":"Jung 1x 14 Jahre LG 1000m","boats":[{"number":24,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Johann Meyer(2009)"]},{"number":25,"division":1,"name":"Ruder-Verein Osterholz-Scharmbeck von 1901 e.V.","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Janning Licht(2009)"]},{"number":26,"division":1,"name":"Emder RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Felix Richter(2009)"]},{"number":27,"division":1,"name":"Bremer RC HANSA","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Malte Renke(2009)"]},{"number":28,"division":1,"name":"RV Schillerschule","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Vincent Ganselweit(2009)"]}]},{"number":210,"name":"Mäd 1x 14 Jahre 1000m","boats":[{"number":29,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Amira Dodenhoff(2009)"]},{"number":30,"division":1,"name":"\"Ruderverein \"\"Weser\"\" Hameln\"","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Paula Webermann(2009)"]},{"number":31,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Amelie Leier(2009)"]},{"number":32,"division":1,"name":"Mündener RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Julia Kanne(2009)"]}]},{"number":211,"name":"Mäd 1x 14 Jahre LG 1000m","boats":[{"number":33,"division":1,"name":"Emder RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Merit Steinigeweg(2009)"]},{"number":34,"division":1,"name":"Hannoverscher RC","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Brandt, Nora(2009)"]}]},{"number":213,"name":"Jung 4x+ 12 u. 13 Jahre 1000m","boats":[{"number":35,"division":1,"name":"RVH","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Michel Coors(2010)","Fabian Neubauer(2010)","Niclas Schüler(2010)","Maximilian Liebeneiner(2010)","Stm/f Jonas Scherenberg(2012)"]},{"number":36,"division":1,"name":"Bremerh. RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Joel Brödner(2010)","Konrad Boelmans(2010)","Damian Bialek(2010)","Max Tausenfreund(2010)","Stm/f Chris Tausendfreund(2011)"]},{"number":37,"division":1,"name":"\"Ruderverein \"\"Weser\"\" Hameln\"","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Birger Günter(2010)","David Depping(2010)","Jork Liam Wiese(2010)","Till Clodius(2010)","Stm/f Theo Stelzer(2010)"]},{"number":38,"division":1,"name":"Emder RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Samuel Lezovic(2010)","Fabian Buß(2010)","Jelto Heeren(2010)","Julian Oberst(2010)","Stm/f Frederik Jabin(2010)"]},{"number":39,"division":1,"name":"RV Schillerschule","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Kilian Weinandt(2010)","Johann Behrendt(2011)","Jonas von Falk(2011)","Simon Sandmann(2011)","Stm/f Alexandru Ogrezeanu-Ghica(2008)"]}]},{"number":214,"name":"Mäd 4x+ 12 u. 13 Jahre 1000m","boats":[{"number":40,"division":1,"name":"RVH","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Annabel Coors(2010)","Yara Ritterbusch(2010)","Lea Kulikowski(2010)","Matilda Lukosch(2010)","Stm/f Elena Bork(2011)"]},{"number":41,"division":1,"name":"RGF Lehrte/Sehnde","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Inga Wiekenberg(2010)","Ilvy Schülke(2010)","Lenja Witte(2011)","Lene Rathmann(2011)","Stm/f Tilda Schulke(2011)"]},{"number":42,"division":1,"name":"Trgm. Hannoverscher RC / RV Schillerschule Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Fels, Tara(2010)","Schenck, Mathilda(2010)","Genth, Johanna(2010)","Wagner, Anna(2010)","Stm/f Brandt, Elin(2012)"]}]},{"number":215,"name":"Jung 2x 12 u. 13 Jahre 1000m","boats":[{"number":43,"division":1,"name":"Emder RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Vincent Rosenfeld(2011)","Jakob Sohn(2011)"]},{"number":44,"division":1,"name":"Trgm. Hannoverscher RC / RV Schillerschule Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Langfehrmann, Justus(2011)","Ogrezanu-Ghica, Mihai(2011)"]}]},{"number":216,"name":"Jung 2x 12 u.13 Jahre LG 1000m","boats":[{"number":45,"division":1,"name":"RV Bismarckschule Hannover","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Simon Ospelkaus(2010)","Justus Ziencz(2010)"]},{"number":46,"division":1,"name":"RVH","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Jonathan Budde(2010)","Noah Scherenberg(2011)"]}]},{"number":217,"name":"Mäd 2x 12 u. 13 Jahre 1000m","boats":[{"number":47,"division":1,"name":"Vegesacker RV","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Marlene Altenburg(2011)","Lilli Busch(2011)"]},{"number":48,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Helena Timm(2011)","Marieke Mölln(2011)"]}]},{"number":218,"name":"Mäd 2x 12 u. 13 Jahre LG 1000m","boats":[{"number":49,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Marlene Grohmann(2011)","Alma Leithold(2011)"]}]},{"number":219,"name":"Jung 1x 13 Jahre 1000m","boats":[{"number":50,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Johannes Redmann(2010)"]},{"number":51,"division":1,"name":"RV Schillerschule","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Tim Saborowski(2010)"]},{"number":52,"division":1,"name":"RK Normannia Braunschweig","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Mats Fölster(2010)"]},{"number":53,"division":1,"name":"TSV Otterndorf","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Hauke Thesen(2010)"]}]},{"number":220,"name":"Jung 1x 13 Jahre LG 1000m","boats":[{"number":54,"division":1,"name":"BSC Bremen","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Peer Gartelmann(2010)"]},{"number":55,"division":1,"name":"RK Normannia Braunschweig","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Bennet Anders(2010)"]},{"number":56,"division":1,"name":"RV Schillerschule","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Finn Mühlpforte(2010)"]}]},{"number":221,"name":"Mäd 1x 13 Jahre 1000m","boats":[{"number":57,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Charlotte Dürkoop(2010)"]}]},{"number":222,"name":"Mäd 1x 13 Jahre LG 1000m","boats":[{"number":58,"division":1,"name":"Bremer RC HANSA","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Deva Salomon(2010)"]},{"number":59,"division":1,"name":"RK Normannia Braunschweig","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Ida Brandhorst(2010)"]}]},{"number":12,"name":"JF 1x A/B 1000m","boats":[{"number":67,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Catrin Scherenberger(2007)"]},{"number":68,"division":1,"name":"LRCW","startTime":"","endTime":"","didNotAttend":false,"didNotFinish":false,"reason":"","athletes":["Johanna Rosenbach(2008)","undefined(undefined)"]}]}]}
+{
+  "name": "Meldeergebnis Landesentscheid Scharnebeck 10./11.06.2023 Tag2",
+  "races": [
+    {
+      "number": 7,
+      "name": "JM 1x B 1000m",
+      "boats": [
+        {
+          "number": 65,
+          "division": 1,
+          "name": "RV Schillerschule",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Alexandru Ogrezeanu-Ghica(2008)"
+          ]
+        },
+        {
+          "number": 66,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Enjo Rehberg(2008)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 201,
+      "name": "Jung/Mäd 4x+ 13 u. 14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 1,
+          "division": 1,
+          "name": "Oldenburger RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Felix Spingat(2009)",
+            "Katharina Viviana Güldenpfennig(2009)",
+            "Felix Bareins(2009)",
+            "Philine Schäfer(2009)",
+            "Martha Mehls(2009)"
+          ]
+        },
+        {
+          "number": 2,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Moritz Brich(2009)",
+            "Hanno Hoffmann(2010)",
+            "Isabel Sophie Kreibohm(2010)",
+            "Beke Diederichs(2010)",
+            "Janne Hoffmann(2009)"
+          ]
+        },
+        {
+          "number": 3,
+          "division": 1,
+          "name": "DRC Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Thees Jakob Scheffermann(2010)",
+            "Janus Lippke(2009)",
+            "Rabiya Hohensee(2009)",
+            "Karla Starke(2010)",
+            "Dorian Kayser(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 202,
+      "name": "Jung 4x+ 13 u. 14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 4,
+          "division": 1,
+          "name": "RV Bismarckschule Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Lovis Grotelüschen(2009)",
+            "Lennart Derenthal(2009)",
+            "Clemens Denger(2009)",
+            "Julius Müller-Seils(2009)",
+            "Julius Hennig(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 203,
+      "name": "Mäd 4x 13 u. 14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 5,
+          "division": 1,
+          "name": "Hannoverscher RC",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Langfehrmann, Clara(2009)",
+            "Giesemann, Svea(2009)",
+            "Stendel, Sophia(2009)",
+            "Beckmann, Carolin(2009)",
+            "Bechstein, Mia(2011)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 204,
+      "name": "Jung 2x 13/14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 6,
+          "division": 1,
+          "name": "RGF Lehrte/Sehnde",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Lennart Spiegel(2009)",
+            "Jack Moritz(2009)"
+          ]
+        },
+        {
+          "number": 7,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Thore Eibich(2009)",
+            "Christopher tom Wörden(2009)"
+          ]
+        },
+        {
+          "number": 8,
+          "division": 1,
+          "name": "Bremerh. RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Tim Tiborski(2009)",
+            "Sönke Waltner(2009)"
+          ]
+        },
+        {
+          "number": 9,
+          "division": 1,
+          "name": "WSV Altwarmbüchen e.V.",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Tristan Kohn(2009)",
+            "Jakob Süßmuth(2009)"
+          ]
+        },
+        {
+          "number": 10,
+          "division": 1,
+          "name": "RV Uelzen",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Lasse Hennings(2009)",
+            "Jan Rümcker(2009)"
+          ]
+        },
+        {
+          "number": 11,
+          "division": 1,
+          "name": "DRC Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Malte Brackhahn(2009)",
+            "Richard Janz (2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 205,
+      "name": "Jung 2x 13/14 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 12,
+          "division": 1,
+          "name": "RV Bismarckschule Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Henrik Großkopf(2009)",
+            "Antonio Ureta(2009)"
+          ]
+        },
+        {
+          "number": 13,
+          "division": 1,
+          "name": "Hermann Billung Celle",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Colin Scott(2010)",
+            "Kurt Breuer(2009)"
+          ]
+        },
+        {
+          "number": 14,
+          "division": 1,
+          "name": "DRC Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Janik Matthaei(2010)",
+            "Clemens Raschke(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 206,
+      "name": "Mäd 2x 13 u. 14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 15,
+          "division": 1,
+          "name": "Oldenburger RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Maja Fricke(2009)",
+            "Lilian Pabst(2009)"
+          ]
+        },
+        {
+          "number": 16,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Zoe Voigt(2009)",
+            "Lina Voigt(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 207,
+      "name": "Mäd 2x 13/14  Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 17,
+          "division": 1,
+          "name": "RV Bismarckschule Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Hailee-Mae Hallwas(2009)",
+            "Sina Kluwe(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 208,
+      "name": "Jung 1x 14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 18,
+          "division": 1,
+          "name": "RK Normannia Braunschweig",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Silas Schelling(2009)"
+          ]
+        },
+        {
+          "number": 19,
+          "division": 1,
+          "name": "Mündener RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Jonas Risse(2009)"
+          ]
+        },
+        {
+          "number": 20,
+          "division": 1,
+          "name": "BSC Bremen",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Liam Steinke(2009)"
+          ]
+        },
+        {
+          "number": 21,
+          "division": 1,
+          "name": "SV Scharnebeck",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Jasper Irmann(2009)"
+          ]
+        },
+        {
+          "number": 22,
+          "division": 1,
+          "name": "RGF Lehrte/Sehnde",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Malte Kotter(2009)"
+          ]
+        },
+        {
+          "number": 23,
+          "division": 1,
+          "name": "Oldenburger RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Bela Rücker(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 209,
+      "name": "Jung 1x 14 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 24,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Johann Meyer(2009)"
+          ]
+        },
+        {
+          "number": 25,
+          "division": 1,
+          "name": "Ruder-Verein Osterholz-Scharmbeck von 1901 e.V.",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Janning Licht(2009)"
+          ]
+        },
+        {
+          "number": 26,
+          "division": 1,
+          "name": "Emder RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Felix Richter(2009)"
+          ]
+        },
+        {
+          "number": 27,
+          "division": 1,
+          "name": "Bremer RC HANSA",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Malte Renke(2009)"
+          ]
+        },
+        {
+          "number": 28,
+          "division": 1,
+          "name": "RV Schillerschule",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Vincent Ganselweit(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 210,
+      "name": "Mäd 1x 14 Jahre 1000m",
+      "boats": [
+        {
+          "number": 29,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Amira Dodenhoff(2009)"
+          ]
+        },
+        {
+          "number": 30,
+          "division": 1,
+          "name": "Ruderverein \"Weser\" Hameln",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Paula Webermann(2009)"
+          ]
+        },
+        {
+          "number": 31,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Amelie Leier(2009)"
+          ]
+        },
+        {
+          "number": 32,
+          "division": 1,
+          "name": "Mündener RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Julia Kanne(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 211,
+      "name": "Mäd 1x 14 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 33,
+          "division": 1,
+          "name": "Emder RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Merit Steinigeweg(2009)"
+          ]
+        },
+        {
+          "number": 34,
+          "division": 1,
+          "name": "Hannoverscher RC",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Brandt, Nora(2009)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 213,
+      "name": "Jung 4x+ 12 u. 13 Jahre 1000m",
+      "boats": [
+        {
+          "number": 35,
+          "division": 1,
+          "name": "RVH",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Michel Coors(2010)",
+            "Fabian Neubauer(2010)",
+            "Niclas Schüler(2010)",
+            "Maximilian Liebeneiner(2010)",
+            "Jonas Scherenberg(2012)"
+          ]
+        },
+        {
+          "number": 36,
+          "division": 1,
+          "name": "Bremerh. RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Joel Brödner(2010)",
+            "Konrad Boelmans(2010)",
+            "Damian Bialek(2010)",
+            "Max Tausenfreund(2010)",
+            "Chris Tausendfreund(2011)"
+          ]
+        },
+        {
+          "number": 37,
+          "division": 1,
+          "name": "Ruderverein \"Weser\" Hameln",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Birger Günter(2010)",
+            "David Depping(2010)",
+            "Jork Liam Wiese(2010)",
+            "Till Clodius(2010)",
+            "Theo Stelzer(2010)"
+          ]
+        },
+        {
+          "number": 38,
+          "division": 1,
+          "name": "Emder RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Samuel Lezovic(2010)",
+            "Fabian Buß(2010)",
+            "Jelto Heeren(2010)",
+            "Julian Oberst(2010)",
+            "Frederik Jabin(2010)"
+          ]
+        },
+        {
+          "number": 39,
+          "division": 1,
+          "name": "RV Schillerschule",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Kilian Weinandt(2010)",
+            "Johann Behrendt(2011)",
+            "Jonas von Falk(2011)",
+            "Simon Sandmann(2011)",
+            "Alexandru Ogrezeanu-Ghica(2008)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 214,
+      "name": "Mäd 4x+ 12 u. 13 Jahre 1000m",
+      "boats": [
+        {
+          "number": 40,
+          "division": 1,
+          "name": "RVH",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Annabel Coors(2010)",
+            "Yara Ritterbusch(2010)",
+            "Lea Kulikowski(2010)",
+            "Matilda Lukosch(2010)",
+            "Elena Bork(2011)"
+          ]
+        },
+        {
+          "number": 41,
+          "division": 1,
+          "name": "RGF Lehrte/Sehnde",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Inga Wiekenberg(2010)",
+            "Ilvy Schülke(2010)",
+            "Lenja Witte(2011)",
+            "Lene Rathmann(2011)",
+            "Tilda Schulke(2011)"
+          ]
+        },
+        {
+          "number": 42,
+          "division": 1,
+          "name": "Trgm. Hannoverscher RC / RV Schillerschule Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Fels, Tara(2010)",
+            "Schenck, Mathilda(2010)",
+            "Genth, Johanna(2010)",
+            "Wagner, Anna(2010)",
+            "Brandt, Elin(2012)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 215,
+      "name": "Jung 2x 12 u. 13 Jahre 1000m",
+      "boats": [
+        {
+          "number": 43,
+          "division": 1,
+          "name": "Emder RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Vincent Rosenfeld(2011)",
+            "Jakob Sohn(2011)"
+          ]
+        },
+        {
+          "number": 44,
+          "division": 1,
+          "name": "Trgm. Hannoverscher RC / RV Schillerschule Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Langfehrmann, Justus(2011)",
+            "Ogrezanu-Ghica, Mihai(2011)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 216,
+      "name": "Jung 2x 12 u.13 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 45,
+          "division": 1,
+          "name": "RV Bismarckschule Hannover",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Simon Ospelkaus(2010)",
+            "Justus Ziencz(2010)"
+          ]
+        },
+        {
+          "number": 46,
+          "division": 1,
+          "name": "RVH",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Jonathan Budde(2010)",
+            "Noah Scherenberg(2011)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 217,
+      "name": "Mäd 2x 12 u. 13 Jahre 1000m",
+      "boats": [
+        {
+          "number": 47,
+          "division": 1,
+          "name": "Vegesacker RV",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Marlene Altenburg(2011)",
+            "Lilli Busch(2011)"
+          ]
+        },
+        {
+          "number": 48,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Helena Timm(2011)",
+            "Marieke Mölln(2011)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 218,
+      "name": "Mäd 2x 12 u. 13 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 49,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Marlene Grohmann(2011)",
+            "Alma Leithold(2011)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 219,
+      "name": "Jung 1x 13 Jahre 1000m",
+      "boats": [
+        {
+          "number": 50,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Johannes Redmann(2010)"
+          ]
+        },
+        {
+          "number": 51,
+          "division": 1,
+          "name": "RV Schillerschule",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Tim Saborowski(2010)"
+          ]
+        },
+        {
+          "number": 52,
+          "division": 1,
+          "name": "RK Normannia Braunschweig",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Mats Fölster(2010)"
+          ]
+        },
+        {
+          "number": 53,
+          "division": 1,
+          "name": "TSV Otterndorf",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Hauke Thesen(2010)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 220,
+      "name": "Jung 1x 13 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 54,
+          "division": 1,
+          "name": "BSC Bremen",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Peer Gartelmann(2010)"
+          ]
+        },
+        {
+          "number": 55,
+          "division": 1,
+          "name": "RK Normannia Braunschweig",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Bennet Anders(2010)"
+          ]
+        },
+        {
+          "number": 56,
+          "division": 1,
+          "name": "RV Schillerschule",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Finn Mühlpforte(2010)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 221,
+      "name": "Mäd 1x 13 Jahre 1000m",
+      "boats": [
+        {
+          "number": 57,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Charlotte Dürkoop(2010)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 222,
+      "name": "Mäd 1x 13 Jahre LG 1000m",
+      "boats": [
+        {
+          "number": 58,
+          "division": 1,
+          "name": "Bremer RC HANSA",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Deva Salomon(2010)"
+          ]
+        },
+        {
+          "number": 59,
+          "division": 1,
+          "name": "RK Normannia Braunschweig",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Ida Brandhorst(2010)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "name": "JF 1x A/B 1000m",
+      "boats": [
+        {
+          "number": 67,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Catrin Scherenberger(2007)"
+          ]
+        },
+        {
+          "number": 68,
+          "division": 1,
+          "name": "LRCW",
+          "startTime": "",
+          "endTime": "",
+          "didNotAttend": false,
+          "didNotFinish": false,
+          "reason": "",
+          "athletes": [
+            "Johanna Rosenbach(2008)"
+          ]
+        }
+      ]
+    }
+  ]
+}
