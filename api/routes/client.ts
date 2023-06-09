@@ -46,17 +46,44 @@ clientRouter.delete('/start/:id', async function (req, res, next) {
 });
 
 clientRouter.get('/finish/:id', async function (req, res, next) {
+  if (typeof req.query.clientId != "string" || req.query.clientId == ""){
+    res.status(500);
+    res.end("The client Id must be a not empty string");
+    return;
+  }
+
   const dbResult = db.createRegattaFinish(req.params.id, req.body.clientId, false);
   res.end(JSON.stringify(dbResult));
 });
 
 clientRouter.post('/finish/:id', async function (req, res, next) {
-  const dbResult = db.updateRegattaFinish(req.params.id, req.body.clientId, req.body.data);
+  if (typeof req.body.clientId != "string" || req.body.clientId == ""){
+    res.status(500);
+    res.end("The client Id must be a not empty string");
+    return;
+  }
+  if (!("regatta" in req.body)){
+    res.status(500);
+    res.end("The regatta must be given");
+    return;
+  }
+  if (!("clientId" in req.body)){
+    res.status(500);
+    res.end("The regatta must be given");
+    return;
+  }
+
+  const dbResult = db.updateRegattaFinish(req.params.id, req.body.clientId, req.body.regatta);
   res.end(JSON.stringify(dbResult));
 });
 
 clientRouter.delete('/finish/:id', async function (req, res, next) {
-  db.updateRegattaFinish(req.params.id, req.body.clientId, req.body.data);
-  const dbResult = db.deleteRegattaFinish(req.params.id, req.body.clientId);
+  if (typeof req.query.clientId != "string" || req.query.clientId == ""){
+    res.status(500);
+    res.end("The client Id must be a not empty string");
+    return;
+  }
+
+  const dbResult = db.deleteRegattaFinish(req.params.id, req.query.clientId);
   res.end(JSON.stringify(dbResult));
 });
