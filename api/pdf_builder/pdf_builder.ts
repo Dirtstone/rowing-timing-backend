@@ -4,225 +4,6 @@ const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const {text} = require('pdfkit');
 
-/*
-const regatta: RegattaData = {
-  name: "Test Regatta Landesentscheid",
-  races: [
-    {
-      number: 1,
-      name: "Jungen 4+ 14 Jahre",
-      boats: [
-        {
-          number: 1, //Needs to be unique and identifiable
-          name: "Ruderklub Normannia Braunschweig",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrechtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:34:13.379Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        },
-        {
-          number: 2, //Needs to be unique and identifiable
-          name: "Ruderklub Otterndorf",
-          athletes: [
-            "Gustav Rundholz",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:34:13.375Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        },
-        {
-          number: 3, //Needs to be unique and identifiable
-          name: "Ruderklub Heidelber",
-          athletes: [
-            "Jesus Christus",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:35:13.375Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        },
-        {
-          number: 4, //Needs to be unique and identifiable
-          name: "Ruderklub Darmstadt",
-          athletes: [
-            "Andi Bar",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:34:23.375Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        },
-        {
-          number: 5, //Needs to be unique and identifiable
-          name: "Ruderklub München",
-          athletes: [
-            "Reiner Zufall",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:37:13.375Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        },
-        {
-          number: 6, //Needs to be unique and identifiable
-          name: "Ruderklub Fallersleben",
-          athletes: [
-            "Joe Mama",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: undefined,
-          endTime: undefined,
-          didNotAttend: true,
-          reason: "DNS",
-          division: 1
-        },
-        {
-          number: 7, //Needs to be unique and identifiable
-          name: "Ruderklub Normannia Braunschweig",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: undefined,
-          didNotAttend: false,
-          reason: "DNF",
-          division: 2
-        },
-        {
-          number: 8, //Needs to be unique and identifiable
-          name: "Ruderklub Otterndorf",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:39:13.375Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 2
-        },
-        {
-          number: 9, //Needs to be unique and identifiable
-          name: "Ruderklub Otterndorf",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: new Date("2023-04-14T16:32:13.375Z"),
-          endTime: new Date("2023-04-14T16:38:13.375Z"),
-          didNotAttend: false,
-          reason: "",
-          division: 2
-        },
-        {
-          number: 10, //Needs to be unique and identifiable
-          name: "Ruderklub Otterndorf",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: undefined,
-          endTime: undefined,
-          didNotAttend: false,
-          reason: "",
-          division: 2
-        },
-        {
-          number: 11, //Needs to be unique and identifiable
-          name: "Ruderklub Otterndorf",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: undefined,
-          endTime: undefined,
-          didNotAttend: false,
-          reason: "",
-          division: 2
-        },
-        {
-          number: 12, //Needs to be unique and identifiable
-          name: "Ruderklub Otterndorf",
-          athletes: [
-            "Malte Meiners",
-            "Felix Vollbrecht",
-            "Jan-Hinnerk Blanke",
-            "Ole Blanke"
-          ],
-          startTime: undefined,
-          endTime: undefined,
-          didNotAttend: false,
-          reason: "",
-          division: 2
-        }
-      ]
-    },
-    {
-      name: "Mädchen 4+ 14 Jahre",
-      number: 2,
-      boats: [
-        {
-          number: 1,
-          name: "asv",
-          athletes: [],
-          startTime: undefined,
-          endTime: undefined,
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        },
-        {
-          number: 2,
-          name: "asv",
-          athletes: [],
-          startTime: undefined,
-          endTime: undefined,
-          didNotAttend: false,
-          reason: "",
-          division: 1
-        }
-      ]
-    }
-  ]
-}
-*/
 type RegattaPdf = {
   name: string,
   races: {
@@ -279,7 +60,7 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
             name: boat.name,
             time: getBoatTime(boat.startTime, boat.endTime),
             athletes: boat.athletes,
-            timeMilli: getBoatTimeMilli(new Date(boat.startTime), new Date(boat.endTime)),
+            timeMilli: getBoatTimeMilli(boat.startTime, boat.endTime),
           });
         }
       } else {
@@ -290,7 +71,7 @@ function convertRegattaDataToRegattaPdf(regattaData: RegattaData): RegattaPdf { 
             name: boat.name,
             time: getBoatTime(boat.startTime, boat.endTime),
             athletes: boat.athletes,
-            timeMilli: getBoatTimeMilli(new Date(boat.startTime), new Date(boat.endTime)),
+            timeMilli: getBoatTimeMilli(boat.startTime, boat.endTime),
           }]
         };
         racePdf.divisions.push(division);
@@ -323,9 +104,9 @@ export function getBoatTime(startTime: string, endTime: string): string {      /
   }
 }
 
-function getBoatTimeMilli(startTime: Date | undefined, endTime: Date | undefined): number {      //Funktion zum berechen der Zeit
+function getBoatTimeMilli(startTime: string, endTime: string): number {      //Funktion zum berechen der Zeit
   if (startTime && endTime) {
-    const milliseconds = endTime.getTime() - startTime.getTime();
+    const milliseconds = new Date(endTime).getTime() - new Date(startTime).getTime();
     return milliseconds;
   }
   return 0;
