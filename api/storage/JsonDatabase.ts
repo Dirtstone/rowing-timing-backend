@@ -104,7 +104,7 @@ export class JsonDatabase {
 
     let regatta: Regatta = this.database.get(id);
 
-    if (regatta.info.startClientId == clientId) {
+    if (regatta.info.startClientId != clientId) {
       return {
         data: undefined,
         errors: "Another client took over the Start role. To avoid synchronization Issues only one active client is allowed",
@@ -193,7 +193,7 @@ export class JsonDatabase {
 
     let regatta: Regatta = this.database.get(id);
 
-    if (regatta.info.finishClientId == clientId) {
+    if (regatta.info.finishClientId != clientId) {
       return {
         data: undefined,
         errors: "Another client took over the Finish role. To avoid synchronization Issues only one active client is allowed",
