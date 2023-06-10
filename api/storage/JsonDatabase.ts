@@ -193,13 +193,14 @@ export class JsonDatabase {
 
     let regatta: Regatta = this.database.get(id);
 
+    /*
     if (regatta.info.finishClientId != clientId) {
       return {
         data: undefined,
         errors: "Another client took over the Finish role. To avoid synchronization Issues only one active client is allowed",
         success: false
       }
-    }
+    }*/
 
     for (let i = 0; i < data.races.length; i++){
       for (let j = 0; j< data.races[i].boats.length; j++){
