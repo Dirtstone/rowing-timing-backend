@@ -132,7 +132,13 @@ function sortDivisionsByTime(regatta: RegattaPdf): RegattaPdf {
             }
           }
         } else {
-          return 0;
+          if ((a.time == "DNF" || a.time == "DNS") && (b.time != "DNS" && b.time != "DNF")) {
+            return 1;
+          } else if ((b.time == "DNF" || b.time == "DNS") && (a.time != "DNS" && a.time != "DNF")) {
+            return -1;
+          } else {
+            return 0;
+          }
         }
       });
 
@@ -209,34 +215,34 @@ function printRegattaErgebnisse(regattaPrint: RegattaPdf, savePaper: boolean, re
     doc.page.margins.bottom = 0 //Dumb: Have to remove bottom margin in order to write into it
 
     doc.lineCap('butt')
-      .moveTo(doc.page.width - doc.page.margins.right, doc.page.height - (oldBottomMargin / 2))
-      .lineTo(doc.page.margins.left, doc.page.height - (oldBottomMargin / 2))
-      .stroke();
+        .moveTo(doc.page.width - doc.page.margins.right, doc.page.height - (oldBottomMargin / 2))
+        .lineTo(doc.page.margins.left, doc.page.height - (oldBottomMargin / 2))
+        .stroke();
 
     doc
-      .text(
-        `Seite: ${i + 1}/${pages.count}`,
-        0,
-        doc.page.height - (oldBottomMargin / 2) - 12,
-        {align: 'right'}
-      );
+        .text(
+            `Seite: ${i + 1}/${pages.count}`,
+            0,
+            doc.page.height - (oldBottomMargin / 2) - 12,
+            {align: 'right'}
+        );
 
     doc.text(`Version 1.0`,
-      0,
-      doc.page.height - (oldBottomMargin / 2) + 3,
-      {align: 'right'}
+        0,
+        doc.page.height - (oldBottomMargin / 2) + 3,
+        {align: 'right'}
     );
 
     doc.text(`Ruderjugend Niedersachsen`,
-      doc.page.margins.left,
-      doc.page.height - (oldBottomMargin / 2) - 12,
-      {align: 'left'}
+        doc.page.margins.left,
+        doc.page.height - (oldBottomMargin / 2) - 12,
+        {align: 'left'}
     );
 
     doc.text("Veröffentlicht am " + (new Date()).toLocaleDateString(),
-      doc.page.margins.left,
-      doc.page.height - (oldBottomMargin / 2) + 3,
-      {align: 'left'}
+        doc.page.margins.left,
+        doc.page.height - (oldBottomMargin / 2) + 3,
+        {align: 'left'}
     );
 
     doc.page.margins.bottom = oldBottomMargin; // ReProtect bottom margin

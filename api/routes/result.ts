@@ -6,7 +6,6 @@ import {getRegattaCSVData} from "../csvExport/CSVExport";
 
 export const resultRouter = Router();
 
-
 resultRouter.get('/list/:id', async function (req, res, next) {
   const regattaData = db.getRegattas();
   if (!regattaData.success || !regattaData.data){

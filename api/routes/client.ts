@@ -52,7 +52,7 @@ clientRouter.get('/finish/:id', async function (req, res, next) {
     return;
   }
 
-  const dbResult = db.createRegattaFinish(req.params.id, req.body.clientId, false);
+  const dbResult = db.createRegattaFinish(req.params.id, req.query.clientId, false);
   res.end(JSON.stringify(dbResult));
 });
 
